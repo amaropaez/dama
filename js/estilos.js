@@ -1,7 +1,15 @@
-document.getElementById("icon-menu").addEventListener("click", mostrar_menu);
+document.getElementById("icon_menu").addEventListener("click", mostrar_menu);
 
 function mostrar_menu(){
 
-    document.getElementById("move-content").classList.toggle('move-container-all');
-    document.getElementById("show-menu").classList.toggle('show-lateral');
+    document.querySelector(".menu").classList.toggle("mostrar_menu");
+    
+}
+
+window.onscroll = function () {
+    var posicion = window.pageYOffset || document.documentElement.scrollTop;
+    var elemento1 = document.getElementById("icon_heart");
+    var elemento2 = document.getElementById("icon_fire");
+    elemento1.style.bottom = posicion * 0.1 + "px";
+    elemento2.style.top = posicion * 0.1 + "px";
 }
